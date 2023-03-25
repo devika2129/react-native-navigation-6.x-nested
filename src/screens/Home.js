@@ -1,30 +1,43 @@
-import { Text, View, StyleSheet, Button } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { FlatList, View, Text, Image } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import MovieData from "./MovieData.json";
 
-export default function Home() {
-	const navigation = useNavigation();
+const GridView = (props) => {
+  return (
+    <FlatList
+      numColumns={2}
+      data={MovieData}
+      keyExtractor={(item, index) => index.toString()}
+      renderItem={({ item }) => {
+        return (
+          <View
+            style={{
+              width: "48%",
+              marginHorizontal: "1%",
+              alignItems: "center",
+              padding: 5,
+              borderWidth: 0.75,
+            }}
+          >
+            <TouchableOpacity>
+              <Image
+                source={{
+                  uri: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
+                }}
+                style={{
+                  width: 150,
+                  height: 150,
+                  borderWidth: 0.75,
+                }}
+              />
+            </TouchableOpacity>
+            <Text style={{}}>{item.Title}</Text>
+          </View>
+        );
+      }}
+    ></FlatList>
+  );
+};
 
-	return (
-		<View style={styles.container}>
-			<Text style={styles.textTitle}>Home Screen</Text>
-			<Button
-				title="Go to Details screen"
-				onPress={() => navigation.navigate("Details")}
-			/>
-		</View>
-	);
-}
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		paddingTop: 15,
-	},
-	textTitle: {
-		fontWeight: "bold",
-		fontSize: 20,
-		color: "#3db83a",
-	},
-});
+export default GridView;
