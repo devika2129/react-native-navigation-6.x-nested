@@ -1,6 +1,5 @@
 import React from "react";
 import { FlatList, View, Text, Image, StyleSheet } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import MovieData from "./MovieData.json";
 
 const CardView = (props) => {
@@ -27,7 +26,7 @@ const CardView = (props) => {
                 borderWidth: 0.75,
                 alignItems: "center",
                 resizeMode: "stretch",
-                borderRadius:10,
+                borderRadius: 10,
               }}
             />
             <Text
@@ -39,16 +38,16 @@ const CardView = (props) => {
               {item.Title}
             </Text>
             <View style={styles.attributeContainer}>
-            <Text style={{fontWeight: 'bold'}}>{"Releasd Year : "}</Text>
-            <Text> {item.Year+ '   '}</Text>
-            <Text style={{fontWeight: 'bold'}}>{"Released On : "}</Text>
-            <Text> {item.Released}</Text>
+              <Text style={{ fontWeight: "bold" }}>{"Releasd Year : "}</Text>
+              <Text> {item.Year + "   "}</Text>
+              <Text style={{ fontWeight: "bold" }}>{"Released On : "}</Text>
+              <Text> {item.Released}</Text>
             </View>
             <View style={styles.attributeContainer}>
               <Text style={styles.attributeName}>{"Genre"} </Text>
               <Text style={styles.semiColon}>{":"} </Text>
               <Text style={styles.attributeValue}> {item.Genre}</Text>
-            </View >
+            </View>
             <View style={styles.attributeContainer}>
               <Text style={styles.attributeName}>{"Director"} </Text>
               <Text style={styles.semiColon}>{":"} </Text>
@@ -74,15 +73,15 @@ const CardView = (props) => {
 export default CardView;
 const styles = StyleSheet.create({
   attributeContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginVertical: 1,
   },
   attributeName: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     width: 60,
   },
   semiColon: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   attributeValue: {
     flex: 1,
