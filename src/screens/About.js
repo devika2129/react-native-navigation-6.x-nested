@@ -2,8 +2,11 @@ import React from "react";
 import { FlatList, View, Text, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import MovieData from "./MovieData.json";
+import DetailsScreen from "./DetailsScreen";
+import { useNavigation } from "@react-navigation/native";
 
 const ListView = (props) => {
+  const navigation = useNavigation();
   return (
     <FlatList
       data={MovieData}
@@ -19,10 +22,12 @@ const ListView = (props) => {
               borderWidth: 0.75,
             }}
           >
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("DetailsScreen", { item })}
+            >
               <Image
                 source={{
-                  uri: "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
+                  uri: item.Poster,
                 }}
                 style={{
                   width: 340,
