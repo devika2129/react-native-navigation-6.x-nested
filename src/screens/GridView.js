@@ -2,52 +2,45 @@ import React from "react";
 import { FlatList, View, Text, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import MovieData from "./MovieData.json";
+import { useNavigation } from "@react-navigation/native";
 
-const CardView = (props) => {
+const GridView = (props) => {
+  const navigation = useNavigation();
   return (
     <FlatList
+      numColumns={2}
       data={MovieData}
       keyExtractor={(item, index) => index.toString()}
       renderItem={({ item }) => {
         return (
           <View
             style={{
-              width: "98%",
+              width: "48%",
               marginHorizontal: "1%",
+              marginVertical: "0.5%",
+              alignItems: "center",
               padding: 5,
-              borderWidth: 0.75,
+              borderRadius:10,
             }}
           >
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("DetailsScreen", {item})}
+            >
               <Image
                 source={{
                   uri: item.Images[0],
                 }}
                 style={{
-                  width: 390,
-                  height: 190,
+                  width: 150,
+                  height: 100,
                   borderWidth: 0.75,
-                  alignItems: "center",
                   resizeMode: "stretch",
+                  borderRadius:5,
+                  backgroundColor:"rgb(0,0,0)"
                 }}
               />
             </TouchableOpacity>
-            <Text
-              style={{
-                fontWeight: "bold",
-                fontSize: 18,
-              }}
-            >
-              {item.Title}
-            </Text>
-            <Text>
-              {"Releasd Year : " + item.Year + "   "}
-              {"Released On: " + item.Released}
-            </Text>
-            <Text>{"Genre : " + item.Genre}</Text>
-            <Text>{"Director : " + item.Director}</Text>
-            <Text>{"Actors : " + item.Actors} </Text>
-            <Text>{"Awards : " + item.Awards}</Text>
+            <Text style={{}}>{item.Title}</Text>
           </View>
         );
       }}
@@ -55,4 +48,4 @@ const CardView = (props) => {
   );
 };
 
-export default CardView;
+export default GridView;

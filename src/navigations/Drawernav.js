@@ -1,12 +1,9 @@
 import "react-native-gesture-handler";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-
-import Bottomtabnav from "./Bottomtabnav";
-
-import About from "../screens/About";
-import Contact from "../screens/Contact";
-import Details from "../screens/Details";
-
+import ListView from "../screens/ListView";
+import CardView from "../screens/CardView";
+import GridView from "../screens/GridView";
+import Home from "../screens/Home"
 const Drawer = createDrawerNavigator();
 
 export default function Drawernav() {
@@ -18,22 +15,22 @@ export default function Drawernav() {
     >
       <Drawer.Screen
         name="Home"
-        component={Bottomtabnav}
+        component={Home}
         options={{ title: "Home Page" }}
       />
       <Drawer.Screen
         name="GridView"
-        component={Details}
+        component={GridView}
         options={{ title: "Grid View" }}
       />
       <Drawer.Screen
         name="ListView"
-        component={About}
+        component={ListView}
         options={{ title: "List View" }}
       />
       <Drawer.Screen
         name="CardView"
-        component={Contact}
+        component={CardView}
         options={{ title: "Card View" }}
       />
     </Drawer.Navigator>

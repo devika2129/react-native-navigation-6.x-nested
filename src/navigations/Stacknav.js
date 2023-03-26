@@ -2,8 +2,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Drawernav from "./Drawernav";
-
-import Details from "../screens/Details";
 import DetailsScreen from "../screens/DetailsScreen";
 
 const Stack = createNativeStackNavigator();

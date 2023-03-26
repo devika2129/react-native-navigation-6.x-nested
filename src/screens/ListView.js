@@ -16,9 +16,10 @@ const ListView = (props) => {
             style={{
               width: "98%",
               marginHorizontal: "1%",
+              marginVertical: "1%",
               alignItems: "center",
               padding: 5,
-              borderWidth: 0.75,
+              borderRadius:10,
             }}
           >
             <TouchableOpacity
@@ -31,8 +32,9 @@ const ListView = (props) => {
                 style={{
                   width: 300,
                   height: 150,
-                  borderWidth: 0.75,
+                  borderWidth: 1,
                   resizeMode: "stretch",
+                  borderRadius:10,
                 }}
               />
             </TouchableOpacity>
