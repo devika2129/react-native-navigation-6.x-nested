@@ -11,7 +11,11 @@ const Drawer = createDrawerNavigator();
 
 export default function Drawernav() {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator
+      style={{
+        borderradius: "10px",
+      }}
+    >
       <Drawer.Screen
         name="Home"
         component={Bottomtabnav}

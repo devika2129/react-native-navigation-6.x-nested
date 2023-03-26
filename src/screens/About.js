@@ -2,7 +2,6 @@ import React from "react";
 import { FlatList, View, Text, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import MovieData from "./MovieData.json";
-import DetailsScreen from "./DetailsScreen";
 import { useNavigation } from "@react-navigation/native";
 
 const ListView = (props) => {
@@ -27,12 +26,13 @@ const ListView = (props) => {
             >
               <Image
                 source={{
-                  uri: item.Poster,
+                  uri: item.Images[0],
                 }}
                 style={{
-                  width: 340,
+                  width: 300,
                   height: 150,
                   borderWidth: 0.75,
+                  resizeMode: "stretch",
                 }}
               />
             </TouchableOpacity>
