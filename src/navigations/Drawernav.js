@@ -32,7 +32,7 @@ export default function Drawernav() {
         options={{ title: "List View" }}
       />
       <Drawer.Screen
-        name="Card View"
+        name="CardView"
         component={Contact}
         options={{ title: "Card View" }}
       />

@@ -3,7 +3,7 @@ import { FlatList, View, Text, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import MovieData from "./MovieData.json";
 
-const ListView = (props) => {
+const CardView = (props) => {
   return (
     <FlatList
       data={MovieData}
@@ -24,11 +24,11 @@ const ListView = (props) => {
                   uri: item.Images[0],
                 }}
                 style={{
-                  width: 340,
-                  height: 100,
+                  width: 390,
+                  height: 190,
                   borderWidth: 0.75,
                   alignItems: "center",
-                  resizeMode: "center",
+                  resizeMode: "stretch",
                 }}
               />
             </TouchableOpacity>
@@ -36,7 +36,6 @@ const ListView = (props) => {
               style={{
                 fontWeight: "bold",
                 fontSize: 18,
-                alignItems: "stretch",
               }}
             >
               {item.Title}
@@ -56,4 +55,4 @@ const ListView = (props) => {
   );
 };
 
-export default ListView;
+export default CardView;
